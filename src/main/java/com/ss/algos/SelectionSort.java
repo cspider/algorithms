@@ -1,19 +1,22 @@
 package com.ss.algos;
 
-public class SelectionSort {
+import java.util.concurrent.ConcurrentMap;
 
-    private void swap(int[] array, int firstIndex, int secondIndex) {
-        int tmp = array[firstIndex] ;
+public class  SelectionSort {
+
+    /* package-private to be test eliginble */
+    <T extends Comparable> void swap(T[] array, int firstIndex, int secondIndex) {
+        T tmp = array[firstIndex] ;
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = tmp ;
     }
 
-    private int indexOfMinimum(int array[], int startIndex ){
-        int minValue = array[startIndex] ;
+    private <T extends Comparable> int indexOfMinimum(T array[], int startIndex ){
+        T minValue = array[startIndex] ;
         int minIndex = startIndex ;
 
         for (int i = minIndex + 1; i < array.length; i++) {
-            if (array[i] < minValue) {
+            if (array[i].compareTo(minValue) < 0) {
                 minIndex = i ;
                 minValue = array[i];
             }
@@ -21,25 +24,11 @@ public class SelectionSort {
         return minIndex ;
     }
 
-    public void sort(int[] array) {
+    public void sort(Integer[] array) {
         int i ;
         for (int c = 0; c < array.length - 1; c++) {
             i = indexOfMinimum(array, c) ;
             swap(array, c, i) ;
         }
-    }
-
-    public static void main(String args[]) {
-        int [] array = new int[] {3, 100, 2, 4, 6, 1} ;
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println("\n");
-
-        new SelectionSort().sort(array) ;
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println("\n");
     }
 }

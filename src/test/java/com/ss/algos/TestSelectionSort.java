@@ -8,13 +8,6 @@ class TestSelectionSort {
 
     SelectionSort sorter = new SelectionSort();
 
-    @Test public void testSwapMethod() {
-        String array[] = {"New York", "Amsterdam", "Edison", "Paris", "Frankfurt"} ;
-        sorter.swap(array, 2, 4);
-        String expectedArray[] = {"New York", "Amsterdam", "Frankfurt", "Paris", "Edison"} ;
-        Assertions.assertArrayEquals(expectedArray, array);
-    }
-
     @Test public void testSelectionSortFirst() {
         Integer array[] = new Integer[]{100, 0, 11, 23, 98, 45, 23, 78} ;
         sorter.sort(array);

@@ -1,11 +1,10 @@
 package com.ss.algos;
 
-import java.util.concurrent.ConcurrentMap;
 
-public class  SelectionSort {
+public  class  SelectionSort implements Sort{
 
     /* package-private to be test eliginble */
-    <T extends Comparable> void swap(T[] array, int firstIndex, int secondIndex) {
+    private <T extends Comparable> void swap(T[] array, int firstIndex, int secondIndex) {
         T tmp = array[firstIndex] ;
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = tmp ;
@@ -24,7 +23,7 @@ public class  SelectionSort {
         return minIndex ;
     }
 
-    public void sort(Integer[] array) {
+    public void sort(Comparable[] array) {
         int i ;
         for (int c = 0; c < array.length - 1; c++) {
             i = indexOfMinimum(array, c) ;

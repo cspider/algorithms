@@ -1,4 +1,5 @@
 package com.ss.algos;
 
-public class Sort {
+public interface Sort<T extends Comparable> {
+    void sort(T[] t) ;
 }

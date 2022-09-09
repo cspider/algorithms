@@ -1,4 +1,4 @@
-package com.ss.algos;
+package com.susanta.algos.sort;
 
 
 import org.junit.jupiter.api.Test;

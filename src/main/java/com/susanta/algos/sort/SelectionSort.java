@@ -1,4 +1,4 @@
-package com.ss.algos;
+package com.susanta.algos.sort;
 
 
 public  class  SelectionSort implements Sort{
